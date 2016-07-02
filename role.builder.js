@@ -3,6 +3,8 @@ var roleUpgrader = require('role.upgrader');
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
+
+        if(creep.memory.working === undefined) creep.memory.working = false
         // if creep is trying to complete a constructionSite but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state

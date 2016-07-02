@@ -3,6 +3,8 @@ var roleBuilder = require('role.builder');
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
+
+        if(creep.memory.working === undefined) creep.memory.working = false
         // if creep is trying to repair something but has no energy left
         if (creep.memory.working == true && creep.carry.energy == 0) {
             // switch state
